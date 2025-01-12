@@ -10,14 +10,14 @@
 </head>
 <body>
 <header>
-    <a href=""><img src="logo.png" style="width: 110px;"></a>
-    <nav class="navbar">
-        <a href="home.php">HOME</a>
-        <a href="menu.php">MENU</a>
-        <a href="">CELEBRATIONS</a>
-        <a href="">CONTACT US</a>
-    </nav>
-</header>
+        <img src="logo.png" style="width: 110px;">
+        <nav class="navbar">
+            <a href="home.php">HOME</a>
+            <a href="menu.php">MENU</a>
+            <a href="Celebration.php">CELEBRATIONS</a>
+            <a href="">CONTACT US</a>
+        </nav>
+    </header>
 
 <section class="home" id="home">
     <div class="content">
