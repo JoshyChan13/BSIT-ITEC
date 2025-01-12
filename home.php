@@ -18,6 +18,6 @@
                 <li><a href="">CONTACT US</a></li>
                 <li><a href="">ABOUT US</a></li>
         </div>
-    <nav>
+    </nav>
 </body>
 </html>
