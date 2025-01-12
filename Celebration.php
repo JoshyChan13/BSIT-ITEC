@@ -15,7 +15,7 @@
         <nav class="navbar">
             <a href="home.php">HOME</a>
             <a href="menu.php">MENU</a>
-            <a href="Celebration.php">RESERVATIONS</a>
+            <a href="Celebration.php">RESERVATION</a>
             <a href="">CONTACT US</a>
             <a href="login.php">LOGIN</a>
         </nav>
@@ -51,7 +51,7 @@
 
 
     <div class="container mt-5">
-        <a href="" class="btn1 btn-success btn-lg text-dark" role="button"> <strong style="font-size:35px"> Book Now!</strong> </a>
+        <a href="Reservation.php" class="btn1 btn-success btn-lg text-dark" role="button"> <strong style="font-size:35px"> Book Now!</strong> </a>
     </div>
     
 </body>
