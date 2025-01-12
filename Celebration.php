@@ -16,6 +16,7 @@
             <a href="menu.php">MENU</a>
             <a href="Celebration.php">RESERVATIONS</a>
             <a href="">CONTACT US</a>
+            <a href="login.php">LOGIN</a>
         </nav>
     </header>
     <br><br><br><br><br><br><br>
