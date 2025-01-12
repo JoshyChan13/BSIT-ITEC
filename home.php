@@ -9,26 +9,70 @@
     <title>Mang Inasal v2.0</title>
 </head>
 <body>
-    <section class="header">
-        <div class="logo container-fluid bg-success">
-            <a href="home.php"><img src="logo.png"></a>
-                <li><a href="home.php">HOME</a></li>
-                <li><a href="menu.php">MENU</a></li>
-                <li><a href="celebrations.php">CELEBRATIONS</a></li>
-                <li><a href="contact.php">CONTACT US</a></li>
-        </div>
-        <br>    
-        <div class="container bg-light p-2">
-            <h2 class="p-3">BEST SELLERS</h2>
-                <div class="card" style="width: 350px;">
-                    <img class="card-img-top" src="paa.png" alt="card image" style="width: 100%;">
-                    <div class="card-body">
-                        <h2 class="card-title">Paa Large - PM1 (solo)</h2>
-                        <h3 class="card-text">Starts at ₱146</h3>
+<header>
+    <a href=""><img src="logo.png" style="width: 110px;"></a>
+    <nav class="navbar">
+        <a href="home.php">HOME</a>
+        <a href="menu.php">MENU</a>
+        <a href="">CELEBRATIONS</a>
+        <a href="">CONTACT US</a>
+    </nav>
+</header>
+
+<section class="home" id="home">
+    <div class="content">
+        <h3>MANG INASAL</h3>
+        <p>Laging hinahanap-hanap ni Angel ang <br>
+        walang kapantay sa 2-in-1 sa laki at <br>
+        #NuotSaSarap na Mang Inasal Chicken!</p>
+        <a href="#" class="btn">Order Now!</a>
+    </div>
+    <div class="image">
+        <img src="manok.jpg" alt="">
+    </div>
+    
+    <div class="container bg-light p-3">
+        <h2 class="p-2">BEST SELLERS</h2>
+            <div class="row">
+                <div class="p-4 my-2">
+                    <div class="card" style="width: 200px;">
+                        <a href="menu.php"><img class="card-img-top" src="paa.png" alt="card image" style="width: 100%;"></a>
+                        <div class="card-body">
+                            <h4 class="card-title">Paa Large - PM1 (solo)</h4>
+                            <h6 class="card-text">Starts at ₱146</h6>
+                        </div>
                     </div>
                 </div>
-                
+                <div class="p-4 my-2">
+                    <div class="card" style="width: 200px;">
+                        <a href="menu.php"><img class="card-img-top" src="bbq.png" alt="card image" style="width: 100%;"></a>
+                        <div class="card-body">
+                            <h4 class="card-title">2 pcs Pork BBQ (solo)</h4>
+                            <h6 class="card-text">Starts at ₱112</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 my-2">
+                    <div class="card" style="width: 200px;">
+                        <a href="menu.php"><img class="card-img-top" src="halohalo.png" alt="card image" style="width: 100%;"></a>
+                        <div class="card-body">
+                            <h4 class="card-title">Extra Creamy Halo-Halo</h4>
+                            <h6 class="card-text">Starts at ₱76</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h4>All Rights Reserved. Mang Inasal Philippines, Inc. 2023</h4>
         </div>
-    </section>
+    </div>
+</section>
+
+
+
+<script src="js/home.js"></script>
+
 </body>
 </html>
