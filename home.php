@@ -10,12 +10,13 @@
 </head>
 <body>
 <header>
-        <img src="logo.png" style="width: 110px;">
+        <img src="img/logo.png" style="width: 110px;">
         <nav class="navbar">
             <a href="home.php">HOME</a>
             <a href="menu.php">MENU</a>
             <a href="Celebration.php">RESERVATIONS</a>
             <a href="">CONTACT US</a>
+            <a href="login.php">LOGIN</a>
         </nav>
     </header>
 
@@ -29,7 +30,7 @@
     </div>
 
     <div class="image ">
-        <img src="manok.jpg" alt="">
+        <img src="img/manok.jpg" alt="">
     </div>
     
     <div class="container bg-light p-3">
@@ -37,7 +38,7 @@
             <div class="row">
                 <div class="p-4 my-2">
                     <div class="card" style="width: 200px;">
-                        <a href="menu.php"><img class="card-img-top" src="paa.png" alt="card image" style="width: 100%;"></a>
+                        <a href="menu.php"><img class="card-img-top" src="img/paa.png" alt="card image" style="width: 100%;"></a>
                         <div class="card-body">
                             <h4 class="card-title">Paa Large - PM1 (solo)</h4>
                             <h6 class="card-text">Starts at ₱146</h6>
@@ -46,7 +47,7 @@
                 </div>
                 <div class="p-4 my-2">
                     <div class="card" style="width: 200px;">
-                        <a href="menu.php"><img class="card-img-top" src="bbq.png" alt="card image" style="width: 100%;"></a>
+                        <a href="menu.php"><img class="card-img-top" src="img/bbq.png" alt="card image" style="width: 100%;"></a>
                         <div class="card-body">
                             <h4 class="card-title">2 pcs Pork BBQ (solo)</h4>
                             <h6 class="card-text">Starts at ₱112</h6>
@@ -55,7 +56,7 @@
                 </div>
                 <div class="p-4 my-2">
                     <div class="card" style="width: 200px;">
-                        <a href="menu.php"><img class="card-img-top" src="halohalo.png" alt="card image" style="width: 100%;"></a>
+                        <a href="menu.php"><img class="card-img-top" src="img/halohalo.png" alt="card image" style="width: 100%;"></a>
                         <div class="card-body">
                             <h4 class="card-title">Extra Creamy Halo-Halo</h4>
                             <h6 class="card-text">Starts at ₱76</h6>
