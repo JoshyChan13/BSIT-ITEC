@@ -15,7 +15,7 @@
         <nav class="navbar">
             <a href="home.php">HOME</a>
             <a href="menu.php">MENU</a>
-            <a href="Celebration.php">RESERVATIONS</a>
+            <a href="Celebration.php">RESERVATION</a>
             <a href="">CONTACT US</a>
             <a href="login.php">LOGIN</a>
         </nav>
@@ -32,13 +32,13 @@
             </p>
         </div>
         <div class="image">
-            <img src="Celebrate.jpg" alt="Celebration">
+            <img src="img/Celebrate.jpg" alt="Celebration">
         </div>
     </div>
 
     <div class="container">
         <div class="image1">
-            <img src="logo.png" alt="Description of the image">
+            <img src="img/logo.png" alt="Description of the image">
         </div>
         <div class="text1">
             <i style="font-size: 40px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Did you see it Coming!!</i>
@@ -51,7 +51,7 @@
 
 
     <div class="container mt-5">
-        <a href="" class="btn1 btn-success btn-lg text-dark" role="button"> <strong style="font-size:35px"> Book Now!</strong> </a>
+        <a href="Reservation.php" class="btn1 btn-success btn-lg text-dark" role="button"> <strong style="font-size:35px"> Book Now!</strong> </a>
     </div>
     
 </body>

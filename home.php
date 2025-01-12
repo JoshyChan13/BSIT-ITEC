@@ -14,7 +14,7 @@
         <nav class="navbar">
             <a href="home.php">HOME</a>
             <a href="menu.php">MENU</a>
-            <a href="Celebration.php">RESERVATIONS</a>
+            <a href="Celebration.php">RESERVATION</a>
             <a href="">CONTACT US</a>
             <a href="login.php">LOGIN</a>
         </nav>

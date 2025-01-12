@@ -9,7 +9,7 @@
 </head>
 <body class="bg-white">
     <div class="container-fluid bg-success text-white">
-        <h5><a href="index.php"><img class="p-3" style="width: 5%;" src="logo.png"></a>Mang Inasal Philippines Inc.</h5>
+        <h5><a href="index.php"><img class="p-3" style="width: 5%;" src="img/logo.png"></a>Mang Inasal Philippines Inc.</h5>
     </div>
 
     <div class="container my-5">
