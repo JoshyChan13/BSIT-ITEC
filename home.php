@@ -9,7 +9,7 @@
     <title>CvSU - GenTri Campus</title>
 </head>
 <body>
-    <section class="header">
+    <nav>
         <div class="logo container-fluid bg-secondary">
             <a href="home.html"><img src="fastfood-logo.png"></a>
                 <li><a href="">HOME</a></li>
@@ -18,6 +18,6 @@
                 <li><a href="">CONTACT US</a></li>
                 <li><a href="">ABOUT US</a></li>
         </div>
-    </section>
+    <nav>
 </body>
 </html>
