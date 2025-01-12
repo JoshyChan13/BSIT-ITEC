@@ -1,3 +1,7 @@
+<?php
+    include("Modules/connect.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,12 +33,12 @@
                                     <input type="text" class="form-control" placeholder="First Name" name="fname" required>
                                 </div>
                                 <div class="form-group">
-                                    <label>Middle Name</label>
-                                    <input type="text" class="form-control" placeholder="Middle Name" name="mname">
-                                </div>
-                                <div class="form-group">
                                     <label>Last Name</label>
                                     <input type="text" class="form-control" placeholder="Last Name" name="lname" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Contact Number</label>
+                                    <input type="number" class="form-control" placeholder="Middle Name" name="contact">
                                 </div>
                                 <div class="form-group">
                                     <label>Email Address</label>
@@ -51,6 +55,34 @@
                                 <button type="submit" class="btn btn-success btn-block my-3" name="createBtn">Create Account</button>
                                 <center><p>Already have an account?<a href="login.php"> Log in</a></p></center>
                             </form>
+                            <?php
+                                if(isset($_REQUEST['createBtn'])){
+                                    $f_name = mysqli_real_escape_string($con, $_POST['fname']);
+                                    $l_name = mysqli_real_escape_string($con, $_POST['lname']);
+                                    $cont_num = mysqli_real_escape_string($con, $_POST['contact']);
+                                    $email_add = mysqli_real_escape_string($con, $_POST['email']);
+                                    $pword_1 = mysqli_real_escape_string($con, $_POST['pword1']);
+                                    $pword_2 = mysqli_real_escape_string($con, $_POST['pword2']);
+
+                                    if($pword_1 == $pword_2){
+                                        $insert = mysqli_query($con, "INSERT INTO account_details VALUE('', '$f_name', '$l_name', '$cont_num', '$email_add', '$pword_1')");
+                                        ?>
+                                            <script>
+                                                alert("Account Successfully Created!");
+                                                windows.location = login.php
+                                            </script>
+                                        <?php
+                                        }   
+                                            else{
+                                            ?>
+                                            <script>
+                                                alert("Confirm password again!");
+                                                windows.location = signup.php
+                                            </script>
+                                            <?php
+                                        }
+                                }
+                            ?>
                         </div>
                       </div>
                 </div>
