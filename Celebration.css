@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 20px;
+  }
+  
+  .text {
+    flex: 1; 
+    margin-right: 20px; 
+  }
+  
+  .image {
+    flex: 1; 
+    margin-right: -250px;
+  }
+  
+  .image img {
+    width: 55%; 
+    height: auto;
+  }
+
+  
+.image1 {
+    flex: 1; 
+    margin-left: -10px;  
+  }
+  
+  .image1 img {
+    max-width: 70%; 
+    height: auto; 
+  }
+  
+  .text1 {
+    flex: 1;
+  }
+
+  .container.mt-5 {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100px; 
+  }
+
+  .btn1{
+    width: 200px;
+    height: 80px;
+    border-radius: 20px;
+  }
