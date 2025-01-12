@@ -14,7 +14,7 @@
         <nav class="navbar">
             <a href="home.php">HOME</a>
             <a href="menu.php">MENU</a>
-            <a href="Celebration.php">CELEBRATIONS</a>
+            <a href="Celebration.php">RESERVATIONS</a>
             <a href="">CONTACT US</a>
         </nav>
     </header>
@@ -27,7 +27,8 @@
         #NuotSaSarap na Mang Inasal Chicken!</p>
         <a href="#" class="btn">Order Now!</a>
     </div>
-    <div class="image">
+
+    <div class="image ">
         <img src="manok.jpg" alt="">
     </div>
     
