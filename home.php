@@ -14,7 +14,7 @@
             <a href="home.html"><img src="fastfood-logo.png"></a>
                 <li><a href="">HOME</a></li>
                 <li><a href="">RESERVATION</a></li>
-                <li><a href="">HOME</a></li>
+                <li><a href="">MENU</a></li>
                 <li><a href="">CONTACT US</a></li>
                 <li><a href="">ABOUT US</a></li>
         </div>
