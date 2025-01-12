@@ -1,0 +1,128 @@
+
+
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+*::selection{
+    background: lightgreen;
+    color: white;
+}
+html{
+    font-size: 62.5%;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+body{
+    background: white;
+}
+section{
+    padding: 2rem 9%;
+}
+.btn{
+    display: inline-block;
+    border: .2rem solid lightgreen;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    margin-top: 1rem;
+    height: 50px;
+}
+.btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: lightgreen;
+    transition: .3s linear;
+    z-index: -1;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: green;
+    padding: 2rem 9%;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+header .navbar a{
+    font-size: 2rem;
+    margin-left: 2rem;
+    color: white;
+}
+header .navbar a:hover{
+    color: lightgreen;
+}
+.home{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    min-height: 100vh;
+    align-items: center;
+}
+.home .content{
+    flex: 1 1 40rem;
+    padding-top: 6.5rem;
+}
+.home .image{
+    flex: 1 1 40rem;
+}
+.home .image img{
+    width: 100%;
+    padding: 1rem;
+}
+.home .content h3{
+    font-size: 5rem;
+    color: black;
+}
+.home .content p{
+    font-size: 1.7rem;
+    color: black;
+    padding: 1rem 0;
+}
+.menu .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.menu .box-container .box{
+    padding: 2rem;
+    background: white;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    border: .1rem solid rgba(0,0,0,.3);
+    border-radius: 5rem;
+    text-align: center;
+    flex: 1 1 30rem;
+    position: relative;
+}
+.menu .box-container .box img{
+    height: 25rem;
+    object-fit: cover;
+    width: 100%;
+}
+.menu .box-container .box h3{
+    padding-top: 1rem;
+}
+.menu .box-container .box p{
+    font-size: 1.5rem;
+}
