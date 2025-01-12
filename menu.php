@@ -27,8 +27,9 @@ if(isset($_POST['add_to_cart'])){
             <a href="home.php">HOME</a>
             <a href="menu.php">MENU</a>
             <a href="">CARTS</a>
-            <a href="">CELEBRATIONS</a>
+            <a href="Celebration.php">CELEBRATIONS</a>
             <a href="">CONTACT US</a>
+            <a href="login.php"></a>
         </nav>
     </header>
 
