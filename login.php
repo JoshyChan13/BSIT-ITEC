@@ -1,3 +1,6 @@
+<?php
+include ("Modules/connect.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +20,7 @@
             <div class="col-6">
                 <div class="card show">
                      <div class="text-center">
-                        <img class="my-3" style="width:30%" src="logo.png">
+                        <img class="my-3" style="width:30%" src="img/logo.png">
                         <h4>LOG IN</h4>
                      </div>
 
@@ -35,6 +38,32 @@
                                 <p><a href="">Forgot password</a></p>
                                 <button type="submit" class="btn btn-success btn-block my-3" name="loginBtn">Log in</button>
                                 <center><p>Don't have an account yet?<a href="signup.php"> Register</a></p></center>
+
+                                <?php
+                                    if(isset($_REQUEST['loginBtn'])){
+                                        $email_add = mysqli_real_escape_string($con, $_POST['email']);
+                                        $p_word = mysqli_real_escape_string($con, $_POST['pword']);
+                                        $result = mysqli_query($con, "SELECT * FROM acc_details WHERE email='$email_add' AND password='$p_word'");
+
+                                        if($result){
+                                            if(mysqli_num_rows($result) >0){
+                                                ?>
+                                                    <script type="text/javascript">
+                                                        alert("Welcome!");
+                                                        window.location = "home.php";
+                                                    </script>
+                                                <?php
+                                            }else{
+                                                ?>
+                                                    <script type="text/javascript">
+                                                        alert("Incorrect email and/or password!");
+                                                        window.location = "login.php";
+                                                    </script>
+                                                <?php
+                                            }
+                                        }
+                                    }
+                                ?>
                             </form>
                         </div>
                       </div>

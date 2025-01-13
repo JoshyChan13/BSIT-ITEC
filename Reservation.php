@@ -1,3 +1,7 @@
+<?php
+    include("Modules/connect.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,10 +51,28 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Event</label>
-                                    <input type="text" class="form-control" placeholder="Birthday" name="event" required>
+                                    <input type="text" class="form-control" placeholder="Birthday" name="event" optional>
                                 </div>
                                 <button type="submit" class="btn btn-success btn-block my-3" name="createBtn">Submit</button>
                             </form>
+                            <?php
+                                if(isset($_REQUEST['createBtn'])){
+                                    $name = mysqli_real_escape_string($con, $_POST['name']);
+                                    $email_add = mysqli_real_escape_string($con, $_POST['email']);
+                                    $date = mysqli_real_escape_string($con, $_POST['date']);
+                                    $time = mysqli_real_escape_string($con, $_POST['time']);
+                                    $No_of_Guests = mysqli_real_escape_string($con, $_POST['guests']);
+                                    $Event = mysqli_real_escape_string($con, $_POST['event']);
+
+                                    $insert = mysqli_query($con, "INSERT INTO reservation_details VALUE('', '$name', '$email_add', '$date', '$time', '$No_of_Guests', '$Event')");
+                                        ?>
+                                            <script type="text/javascript">
+                                                alert("Reservation Booked!");
+                                                window.location = "Celebration.php";
+                                            </script>
+                                        <?php
+                                        }
+                            ?>
                         </div>
                       </div>
                 </div>

@@ -15,13 +15,13 @@
             <a href="home.php">HOME</a>
             <a href="menu.php">MENU</a>
             <a href="">CARTS</a>
-            <a href="">CELEBRATIONS</a>
-            <a href="">CONTACT US</a>
+            <a href="Celebration.php">CELEBRATIONS</a>
+            <a href="Contact.php">CONTACT US</a>
         </nav>
     </header>
-
+<BR><BR><BR><BR><BR><BR><BR>
 <section class="menu" id="menu">
-    <h1 class="heading"> our <span>menu</span> </h1>
+    <h1 class="heading text-center" style="font-size: 45px;"><strong>Our <span class="text-success">MENU</span></strong> </h1>
         <div class="box-container">
             <div class="box">
                 <img class="image" src="img/paa.png" alt="">

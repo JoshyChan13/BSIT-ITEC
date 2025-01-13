@@ -21,7 +21,7 @@
             <div class="col-6">
                 <div class="card show">
                      <div class="text-center">
-                        <img class="my-3" style="width:30%" src="logo.png">
+                        <img class="my-3" style="width:30%" src="img/logo.png">
                         <h4>CREATE AN ACCOUNT</h4>
                      </div>
 
@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Contact Number</label>
-                                    <input type="number" class="form-control" placeholder="Middle Name" name="contact">
+                                    <input type="number" class="form-control" placeholder="Contact Number" name="contact">
                                 </div>
                                 <div class="form-group">
                                     <label>Email Address</label>
@@ -65,19 +65,19 @@
                                     $pword_2 = mysqli_real_escape_string($con, $_POST['pword2']);
 
                                     if($pword_1 == $pword_2){
-                                        $insert = mysqli_query($con, "INSERT INTO account_details VALUE('', '$f_name', '$l_name', '$cont_num', '$email_add', '$pword_1')");
+                                        $insert = mysqli_query($con, "INSERT INTO acc_details VALUE('', '$f_name', '$l_name', '$cont_num', '$email_add', '$pword_1')");
                                         ?>
-                                            <script>
+                                            <script type="text/javascript">
                                                 alert("Account Successfully Created!");
-                                                windows.location = login.php
+                                                window.location = "login.php";
                                             </script>
                                         <?php
                                         }   
                                             else{
                                             ?>
                                             <script>
-                                                alert("Confirm password again!");
-                                                windows.location = signup.php
+                                                alert("Input password again");
+                                                window.location = "signup.php";
                                             </script>
                                             <?php
                                         }
