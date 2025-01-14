@@ -43,7 +43,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Time</label>
-                                    <input type="text" class="form-control" placeholder="Time" name="time" required>
+                                    <select id="options" class="form-control" name="time" required>
+                                        <option value="9am - 12-pm" selected>9am - 12-pm</option>
+                                        <option value="1pm - 4pm">1pm - 4pm</option>
+                                        <option value="5pm - 7pm">5pm - 7pm</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Number of Guests</label>
@@ -53,7 +57,7 @@
                                     <label>Event</label>
                                     <input type="text" class="form-control" placeholder="Birthday" name="event" optional>
                                 </div>
-                                <button type="submit" class="btn btn-success btn-block my-3" name="createBtn">Submit</button>
+                                <button type="submit" class="btn btn-success text-dark btn-block my-3" name="createBtn">Submit</button>
                             </form>
                             <?php
                                 if(isset($_REQUEST['createBtn'])){

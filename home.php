@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,11 +15,25 @@
 <header>
         <img src="img/logo.png" style="width: 110px;">
         <nav class="navbar">
-            <a href="home.php">HOME</a>
-            <a href="menu.php">MENU</a>
-            <a href="Celebration.php">RESERVATION</a>
-            <a href="Contact.php">CONTACT US</a>
-            <a href="login.php">LOGIN</a>
+            <a href="home.php" class="nav">HOME</a>
+            <a href="menu.php" class="nav">MENU</a>
+            <a href="Celebration.php" class="nav">RESERVATION</a>
+            <a href="Contact.php" class="nav">CONTACT US</a>
+            <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true){ ?>
+                <a href="logout.php" class="login" onclick="logout()">LOGOUT</a>
+            <?php }else{ ?>
+                <a href="login.php" class="login">LOGIN</a>
+            <?php } ?>
+            <script>
+            function logout() {
+                <?php
+                session_start();
+                $_SESSION = array();
+                session_destroy();
+                ?>
+                window.location = "home.php";
+            }
+            </script>
         </nav>
     </header>
 

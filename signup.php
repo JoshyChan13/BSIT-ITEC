@@ -56,32 +56,49 @@
                                 <center><p>Already have an account?<a href="login.php"> Log in</a></p></center>
                             </form>
                             <?php
-                                if(isset($_REQUEST['createBtn'])){
-                                    $f_name = mysqli_real_escape_string($con, $_POST['fname']);
-                                    $l_name = mysqli_real_escape_string($con, $_POST['lname']);
-                                    $cont_num = mysqli_real_escape_string($con, $_POST['contact']);
-                                    $email_add = mysqli_real_escape_string($con, $_POST['email']);
-                                    $pword_1 = mysqli_real_escape_string($con, $_POST['pword1']);
-                                    $pword_2 = mysqli_real_escape_string($con, $_POST['pword2']);
+                                if (isset($_REQUEST['createBtn'])) {
+                                $f_name = mysqli_real_escape_string($con, $_POST['fname']);
+                                $l_name = mysqli_real_escape_string($con, $_POST['lname']);
+                                $cont_num = mysqli_real_escape_string($con, $_POST['contact']);
+                                $email_add = mysqli_real_escape_string($con, $_POST['email']);
+                                $pword_1 = mysqli_real_escape_string($con, $_POST['pword1']);
+                                $pword_2 = mysqli_real_escape_string($con, $_POST['pword2']);
 
-                                    if($pword_1 == $pword_2){
-                                        $insert = mysqli_query($con, "INSERT INTO acc_details VALUE('', '$f_name', '$l_name', '$cont_num', '$email_add', '$pword_1')");
-                                        ?>
-                                            <script type="text/javascript">
-                                                alert("Account Successfully Created!");
-                                                window.location = "login.php";
-                                            </script>
-                                        <?php
-                                        }   
-                                            else{
-                                            ?>
-                                            <script>
-                                                alert("Input password again");
-                                                window.location = "signup.php";
-                                            </script>
-                                            <?php
-                                        }
+                                if ($pword_1 === $pword_2) {
+                                    $check_query = "SELECT * FROM account_details WHERE password = ?";
+                                    $stmt = $con->prepare($check_query);
+                                    $stmt->bind_param("s", $pword_1);
+                                    $stmt->execute();
+                                    $result = $stmt->get_result();
+
+                                if ($result->num_rows > 0) {
+                            ?>
+                                <script type="text/javascript">
+                                    alert("This password is already used. Please choose a different password.");
+                                    window.location = "signup.php";
+                                </script>
+                            <?php
+                                    } else {
+                                    $insert_query = "INSERT INTO account_details VALUE('', ?, ?, ?, ?, ?)";
+                                    $insert_stmt = $con->prepare($insert_query);
+                                    $insert_stmt->bind_param("sssss", $f_name, $l_name, $cont_num, $email_add, $pword_1);
+                                    $insert_stmt->execute();
+                                ?>
+                                <script type="text/javascript">
+                                    alert("Account Successfully Created!");
+                                    window.location = "login.php";
+                                </script>
+                                <?php
                                 }
+                                } else {
+                            ?>
+                                <script type="text/javascript">
+                                    alert("Passwords do not match. Please try again.");
+                                    window.location = "signup.php";
+                                </script>
+                            <?php
+                                }
+                            }
                             ?>
                         </div>
                       </div>

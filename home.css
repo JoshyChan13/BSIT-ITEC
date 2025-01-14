@@ -59,13 +59,44 @@ header{
     padding: 2rem 9%;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
 }
-header .navbar a{
+header .navbar .nav{
     font-size: 16px;
     margin-left: 2rem;
     color: white;
 }
-header .navbar a:hover{
+header .navbar .nav:hover{
     color: lightgreen;
+}
+.navbar a{
+    position: relative;
+    font-size: 1.1cm;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+
+}
+header .navbar .login {
+    font-size: 16px;
+    width: 80px;
+    height: 42px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+    line-height: 40px; 
+    text-align: center;
+}
+
+header .navbar .login:hover {
+    background: white;
+    color: black;
+
 }
 .home{
     display: flex;
@@ -120,3 +151,15 @@ header .navbar a:hover{
 .menu .box-container .box p{
     font-size: 1.5rem;
 }
+.form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    line-height: 1.5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+select.form-control {
+    height: 38px; 
+  }

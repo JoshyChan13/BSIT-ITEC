@@ -1,5 +1,6 @@
 <?php
-include ("Modules/connect.php");
+    include ("Modules/connect.php");
+    session_start()
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +13,7 @@ include ("Modules/connect.php");
 </head>
 <body class="bg-white">
     <div class="container-fluid bg-success text-white">
-        <h5><a href="index.php"><img class="p-3" style="width: 5%;" src="img/logo.png"></a>Mang Inasal Philippines Inc.</h5>
+        <h5><a href="home.php"><img class="p-3" style="width: 5%;" src="img/logo.png"></a>Mang Inasal Philippines Inc.</h5>
     </div>
 
     <div class="container my-5">
@@ -35,7 +36,6 @@ include ("Modules/connect.php");
                                     <label>Password</label>
                                     <input type="password" class="form-control" placeholder="Password" name="pword" required>
                                 </div>
-                                <p><a href="">Forgot password</a></p>
                                 <button type="submit" class="btn btn-success btn-block my-3" name="loginBtn">Log in</button>
                                 <center><p>Don't have an account yet?<a href="signup.php"> Register</a></p></center>
 
@@ -43,26 +43,27 @@ include ("Modules/connect.php");
                                     if(isset($_REQUEST['loginBtn'])){
                                         $email_add = mysqli_real_escape_string($con, $_POST['email']);
                                         $p_word = mysqli_real_escape_string($con, $_POST['pword']);
-                                        $result = mysqli_query($con, "SELECT * FROM acc_details WHERE email='$email_add' AND password='$p_word'");
+                                        $result = mysqli_query($con, "SELECT * FROM account_details WHERE Email='$email_add' AND password='$p_word'");
+                                        $row = mysqli_fetch_array($result);
 
-                                        if($result){
-                                            if(mysqli_num_rows($result) >0){
-                                                ?>
-                                                    <script type="text/javascript">
-                                                        alert("Welcome!");
-                                                        window.location = "home.php";
-                                                    </script>
-                                                <?php
-                                            }else{
+                                        if(is_array($row)){
+                                                $_SESSION['Email'] = $row['Email'];
+                                                $_SESSION['password'] = $row['password'];
+                                        }else{
                                                 ?>
                                                     <script type="text/javascript">
                                                         alert("Incorrect email and/or password!");
                                                         window.location = "login.php";
                                                     </script>
                                                 <?php
+                                            }}if(isset($_SESSION["password"])){
+                                                ?>
+                                                    <script type="text/javascript">
+                                                        alert("Welcome to Mang-Inasal!");
+                                                        window.location = "home.php";
+                                                    </script>
+                                                <?php
                                             }
-                                        }
-                                    }
                                 ?>
                             </form>
                         </div>

@@ -12,10 +12,11 @@
 <header>
     <a href=""><img src="img/logo.png" style="width: 110px;"></a>
     <nav class="navbar">
-        <a href="home.php">HOME</a>
-        <a href="menu.php">MENU</a>
-        <a href="">CELEBRATIONS</a>
-        <a href="">CONTACT US</a>
+    <a href="home.php" class="nav">HOME</a>
+            <a href="menu.php" class="nav">MENU</a>
+            <a href="Celebration.php" class="nav">RESERVATION</a>
+            <a href="Contact.php" class="nav">CONTACT US</a>
+            <a href="login.php" class="login">LOGIN</a>
     </nav>
 </header>
 

@@ -13,11 +13,11 @@
     <header>
         <a href=""><img src="img/logo.png" style="width: 110px;"></a>
         <nav class="navbar">
-            <a href="home.php">HOME</a>
-            <a href="menu.php">MENU</a>
-            <a href="Celebration.php">RESERVATION</a>
-            <a href="">CONTACT US</a>
-            <a href="login.php">LOGIN</a>
+        <a href="home.php" class="nav">HOME</a>
+            <a href="menu.php" class="nav">MENU</a>
+            <a href="Celebration.php" class="nav">RESERVATION</a>
+            <a href="Contact.php" class="nav">CONTACT US</a>
+            <a href="login.php" class="login">LOGIN</a>
         </nav>
     </header>
     <br><br><br><br><br><br><br>
@@ -51,7 +51,7 @@
 
 
     <div class="container mt-5">
-        <a href="Reservation.php" class="btn1 btn-success btn-lg text-dark" role="button"> <strong style="font-size:35px"> Book Now!</strong> </a>
+        <a href="Reservation.php" class="btn1 btn-success btn-lg text-dark" role="button"> <strong style="font-size:33px"> Book Now!</strong> </a>
     </div>
     
 </body>
