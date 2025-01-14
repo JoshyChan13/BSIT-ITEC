@@ -1,6 +1,7 @@
 <?php
     session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,11 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="home.css">
     <title>Mang Inasal v2.0</title>
+    <script>
+    window.onload = function() {
+    window.location = "login.php";
+    };
+    </script>
 </head>
 <body>
 <header>
