@@ -18,7 +18,7 @@
             <a href="home.php" class="nav">HOME</a>
             <a href="menu.php" class="nav">MENU</a>
             <a href="Celebration.php" class="nav">RESERVATION</a>
-            <a href="Contact.php" class="nav">CONTACT US</a>
+            <a href="Contact.php" class="nav">CONTACT</a>
             <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true){ ?>
                 <a href="logout.php" class="login" onclick="logout()">LOGOUT</a>
             <?php }else{ ?>
