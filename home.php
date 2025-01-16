@@ -37,7 +37,7 @@ include ("Modules/connect.php");
         <p>Laging hinahanap-hanap ni Angel ang <br>
         walang kapantay sa 2-in-1 sa laki at <br>
         #NuotSaSarap na Mang Inasal Chicken!</p>
-        <a href="#" class="btn">Order Now!</a>
+        <a href="menu.php" class="btn">Order Now!</a>
     </div>
 
     <div class="image ">
