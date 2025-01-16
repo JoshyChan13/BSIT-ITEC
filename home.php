@@ -1,5 +1,12 @@
 <?php
-    session_start();
+include ("Modules/connect.php");
+    if(!empty($_SESSION["Username"])){
+        $user = $_SESSION["Username"];
+        $result = mysqli_query($con, "SELECT * FROM account_details WHERE Username = '$user'");
+        $row = mysqli_fetch_assoc($result);
+    } else{
+        header("Location: login.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -11,11 +18,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="home.css">
     <title>Mang Inasal v2.0</title>
-    <script>
-    window.onload = function() {
-    window.location = "login.php";
-    };
-    </script>
 </head>
 <body>
 <header>
@@ -25,21 +27,7 @@
             <a href="menu.php" class="nav">MENU</a>
             <a href="Celebration.php" class="nav">RESERVATION</a>
             <a href="Contact.php" class="nav">CONTACT</a>
-            <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true){ ?>
-                <a href="logout.php" class="login" onclick="logout()">LOGOUT</a>
-            <?php }else{ ?>
-                <a href="login.php" class="login">LOGIN</a>
-            <?php } ?>
-            <script>
-            function logout() {
-                <?php
-                session_start();
-                $_SESSION = array();
-                session_destroy();
-                ?>
-                window.location = "home.php";
-            }
-            </script>
+            <a href="logout.php" class="login" onclick="logout()">LOGOUT</a>
         </nav>
     </header>
 

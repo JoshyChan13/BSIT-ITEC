@@ -1,10 +1,7 @@
 <?php
-    session_start();
-    if(session_destroy()){
-    ?>
-        <script>
-            window.location("Home.php");
-        </script>
-    <?php
-    }
+    include ("Modules/connect.php");
+    $_SESSION = [];
+    session_unset();
+    session_destroy();
+    header("Location: login.php");
 ?>

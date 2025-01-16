@@ -17,7 +17,7 @@
             <a href="menu.php" class="nav">MENU</a>
             <a href="Celebration.php" class="nav">RESERVATION</a>
             <a href="Contact.php" class="nav">CONTACT</a>
-            <a href="login.php" class="login">LOGIN</a>
+            <a href="logout.php" class="login" onclick="logout()">LOGOUT</a>
         </nav>
     </header>
     <br><br><br><br><br><br><br>

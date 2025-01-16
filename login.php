@@ -1,6 +1,8 @@
 <?php
     include ("Modules/connect.php");
-    session_start();
+    if(!empty($_SESSION["Username"])){
+        header("Location: home.php");
+    }
 ?>
 
 <!DOCTYPE html>

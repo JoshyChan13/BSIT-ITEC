@@ -1,5 +1,8 @@
 <?php
     include("Modules/connect.php");
+    if(!empty($_SESSION["Username"])){
+        header("Location: home.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -30,31 +33,31 @@
                             <form action="" method="post">
                                 <div class="form-group">
                                     <label>First Name</label>
-                                    <input type="text" class="form-control" placeholder="First Name" name="fname" required>
+                                    <input type="text" class="form-control" placeholder="" name="fname" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Last Name</label>
-                                    <input type="text" class="form-control" placeholder="Last Name" name="lname" required>
+                                    <input type="text" class="form-control" placeholder="" name="lname" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Contact Number</label>
-                                    <input type="number" class="form-control" placeholder="Contact Number" name="contact" required>
+                                    <input type="text" class="form-control" placeholder="" name="contact" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Username</label>
-                                    <input type="text" class="form-control" placeholder="Franz" name="username" required>
+                                    <input type="text" class="form-control" placeholder="" name="username" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Email Address</label>
-                                    <input type="text" class="form-control" placeholder="Email Address" name="email" required>
+                                    <input type="text" class="form-control" placeholder="" name="email" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input type="password" class="form-control" placeholder="Password" name="pword1" required>
+                                    <input type="password" class="form-control" placeholder="" name="pword1" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Confirm Password</label>
-                                    <input type="password" class="form-control" placeholder="Confirm Password" name="pword2" required>
+                                    <input type="password" class="form-control" placeholder="" name="pword2" required>
                                 </div>
                                 <button type="submit" class="btn btn-success btn-block my-3" name="createBtn">Create Account</button>
                                 <center><p>Already have an account?<a href="login.php"> Log in</a></p></center>

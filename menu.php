@@ -1,6 +1,8 @@
 <?php 
     include ("Modules/connect.php");
-
+    if(empty($_SESSION["Username"])){
+        header("Location: login.php");
+    }
     $sql = "SELECT * FROM products";
     $all_product = $con->query($sql)
 ?>
@@ -23,7 +25,7 @@
             <a href="menu.php" class="nav">MENU</a>
             <a href="Celebration.php" class="nav">RESERVATION</a>
             <a href="Contact.php" class="nav">CONTACT</a>
-            <a href="login.php" class="login">LOGIN</a>
+            <a href="logout.php" class="login" onclick="logout()">LOGOUT</a>
         </nav>
     </header>
 <BR><BR><BR><BR><BR><BR><BR>
