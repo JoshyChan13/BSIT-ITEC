@@ -38,11 +38,11 @@ include ("Modules/connect.php");
                             <form action="" method="post">
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input type="text" class="form-control" placeholder="QWERTY" name="name" required>
+                                    <input type="text" class="form-control" placeholder="" name="name" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="text" class="form-control" placeholder="QWERTY@gmail" name="email" required>
+                                    <input type="text" class="form-control" placeholder="" name="email" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Date</label>
@@ -51,7 +51,8 @@ include ("Modules/connect.php");
                                 <div class="form-group">
                                     <label>Time</label>
                                     <select id="options" class="form-control" name="time" required>
-                                        <option value="9am - 12-pm" selected>9am - 12-pm</option>
+                                        <option value="" selected></option>
+                                        <option value="9am - 12-pm">9am - 12-pm</option>
                                         <option value="1pm - 4pm">1pm - 4pm</option>
                                         <option value="5pm - 7pm">5pm - 7pm</option>
                                     </select>
@@ -59,10 +60,6 @@ include ("Modules/connect.php");
                                 <div class="form-group">
                                     <label>Number of Guests</label>
                                     <input type="number" class="form-control" placeholder="Maximum of 60 Guests" name="guests" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Event</label>
-                                    <input type="text" class="form-control" placeholder="Birthday" name="event" optional>
                                 </div>
                                 <button type="submit" class="btn btn-success text-dark btn-block my-3" name="createBtn">Submit</button>
                             </form>

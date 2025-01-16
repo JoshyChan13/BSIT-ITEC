@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2025 at 07:33 PM
+-- Generation Time: Jan 16, 2025 at 04:50 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -28,12 +28,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `account_details` (
-  `Acc_id` int(11) NOT NULL,
-  `Fname` varchar(200) NOT NULL,
-  `Lname` varchar(200) NOT NULL,
-  `Cont_num` int(11) NOT NULL,
-  `Email` varchar(200) NOT NULL,
-  `password` varchar(200) NOT NULL
+  `Fname` varchar(225) NOT NULL,
+  `Lname` varchar(225) NOT NULL,
+  `Cont_num` int(15) NOT NULL,
+  `Username` varchar(225) NOT NULL,
+  `Email` varchar(225) NOT NULL,
+  `Password` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -98,9 +98,9 @@ CREATE TABLE `reservation_details` (
   `Reservation_Id` int(11) NOT NULL,
   `Name` varchar(225) NOT NULL,
   `Email` varchar(225) NOT NULL,
-  `Date` varchar(20) NOT NULL,
-  `Time` varchar(10) NOT NULL,
-  `Num_of_Guests` int(10) NOT NULL,
+  `Date` date NOT NULL,
+  `Time` varchar(225) NOT NULL,
+  `Num_of_Guests` int(11) NOT NULL,
   `Celebration` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -112,7 +112,7 @@ CREATE TABLE `reservation_details` (
 -- Indexes for table `account_details`
 --
 ALTER TABLE `account_details`
-  ADD PRIMARY KEY (`Acc_id`);
+  ADD PRIMARY KEY (`Username`);
 
 --
 -- Indexes for table `cart`
@@ -137,12 +137,6 @@ ALTER TABLE `reservation_details`
 --
 
 --
--- AUTO_INCREMENT for table `account_details`
---
-ALTER TABLE `account_details`
-  MODIFY `Acc_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
@@ -152,7 +146,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `reservation_details`
 --
 ALTER TABLE `reservation_details`
-  MODIFY `Reservation_Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Reservation_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
