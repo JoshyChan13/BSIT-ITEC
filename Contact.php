@@ -52,9 +52,9 @@ include ("Modules/connect.php");
       <div class="col-md-6">
         <div class="p-4 border rounded shadow-sm">
           <h4 class="fw-bold">Visit Us!</h4>
-          <p><strong><br>Facebook:</strong> https://www.facebook.com/manginasalph</p>
-          <p><strong>Instagram:</strong> https://www.instagram.com/iammanginasal</p>
-          <p><strong>Tiktok:</strong> https://www.tiktok.com/@manginasalph</p>
+          <p><strong>Facebook:</strong><a href="https://www.facebook.com/manginasalph"> https://www.facebook.com/manginasalph</a></p></p>
+          <p><strong>Instagram:</strong><a href="https://www.instagram.com/iammanginasal"> https://www.instagram.com/iammanginasal</a></p></p>
+          <p><strong>Tiktok:</strong><a href="https://www.tiktok.com/@manginasalph"> https://www.tiktok.com/@manginasalph</a></p></p>
       </div>
   </div>
 
