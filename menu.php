@@ -5,6 +5,8 @@
     }
     $sql = "SELECT * FROM products";
     $result = $con->query($sql);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +44,7 @@
                             <h3>' . $row['name'] . '</h3>
                             <p>₱' . $row['price'] . '</p>
                         </div>';
-                    echo '<a href="javascript:void(0);" class="btn" onclick="addToCart(' . $row['Item_id'] . ', \'' . addslashes($row['name']) . '\', ' . $row['price'] . ', \'' . 'data:image/jpeg;base64,' . base64_encode($row['image']) . '\', this)">Add to Cart</a>';
+                        echo '<a href="javascript:void(0);" class="btn" onclick="addToCart(' . $row['Item_id'] . ', \'' . addslashes($row['name']) . '\', ' . $row['price'] . ', \'' . 'data:image/jpeg;base64,' . base64_encode($row['image']) . '\')">Add to Cart</a>';
                     echo '</div>';
                 }
             } else {
@@ -52,5 +54,35 @@
         </div>
 
     </section>
+    <script>
+        function addToCart(itemId, name, price) {
+            const data = {
+                item_id: itemId,
+                name: name,
+                price: price,
+            };
+
+
+
+            fetch('add_to_cart.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data), 
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    alert(result.message); 
+                } else {
+                    alert('Error: ' + result.message); 
+                }
+            })
+            .catch(error => console.error('Fetch error:', error));
+        }
+
+
+</script>
 </body>
 </html>
