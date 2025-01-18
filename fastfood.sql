@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2025 at 04:50 PM
+-- Generation Time: Jan 18, 2025 at 04:20 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -36,6 +36,15 @@ CREATE TABLE `account_details` (
   `Password` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `account_details`
+--
+
+INSERT INTO `account_details` (`Fname`, `Lname`, `Cont_num`, `Username`, `Email`, `Password`) VALUES
+('cley', 'domasian', 2147483647, 'cley', 'gtc.dredd.domasian@cvsu.edu.ph', 'dredd123'),
+('Dredd', 'Domasian', 2147483647, 'domasiandredd@gmail.com', 'domasiandredd@gmail.com', 'dredd123'),
+('lhay', 'ramos', 2147483647, 'lhay', 'lhay@gmail.com', 'lhay123');
+
 -- --------------------------------------------------------
 
 --
@@ -43,11 +52,11 @@ CREATE TABLE `account_details` (
 --
 
 CREATE TABLE `cart` (
-  `name` varchar(225) NOT NULL,
-  `price` varchar(225) NOT NULL,
-  `quantity` int(20) NOT NULL,
   `id` int(11) NOT NULL,
-  `image` varchar(100) NOT NULL
+  `item_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `quantity` int(11) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -140,7 +149,7 @@ ALTER TABLE `reservation_details`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `reservation_details`
