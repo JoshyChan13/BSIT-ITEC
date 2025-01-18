@@ -4,7 +4,7 @@
         header("Location: login.php");
     }
     $sql = "SELECT * FROM products";
-    $all_product = $con->query($sql)
+    $result = $con->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -30,22 +30,27 @@
     </header>
 <BR><BR><BR><BR><BR><BR><BR>
 <section class="menu" id="menu">
-    <h1 class="heading text-center" style="font-size: 45px;"><strong>Our <span class="text-success">MENU</span></strong> </h1>
-    <?php
-        while($row = mysqli_fetch_assoc($all_product)){
-    ?>
+        <h1 class="heading text-center" style="font-size: 45px;"><strong>Our <span class="text-success">MENU</span></strong> </h1>
         <div class="box-container">
-            <div class="box">
-                <img class="image" src="<?php '<img src="data:image/jpeg;base64,'.base64_encode( $result['image'] ).'"/>'; ?>" alt="">
-                <div class="content">
-                    <h3 class="p_name"><?php echo $row["name"]; ?></h3>
-                    <p class="p_price"><?php echo $row["price"]; ?></p>
-                </div>
-                <a href="" class="btn">Add to Cart</a>
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo '
+                    <div class="box">
+                        <img class="image" src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="">
+                        <div class="content">
+                            <h3>' . $row['name'] . '</h3>
+                            <p>₱' . $row['price'] . '</p>
+                        </div>';
+                    echo '<a href="javascript:void(0);" class="btn" onclick="addToCart(' . $row['Item_id'] . ', \'' . addslashes($row['name']) . '\', ' . $row['price'] . ', \'' . 'data:image/jpeg;base64,' . base64_encode($row['image']) . '\', this)">Add to Cart</a>';
+                    echo '</div>';
+                }
+            } else {
+                echo "No products found!";
+            }
+            ?>
         </div>
-    <?php
-        }
-    ?>
-</section>
+
+    </section>
 </body>
 </html>
