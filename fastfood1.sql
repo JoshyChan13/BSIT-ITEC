@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 19, 2025 at 02:19 PM
+-- Generation Time: Jan 19, 2025 at 10:42 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,7 +43,6 @@ CREATE TABLE `account_details` (
 INSERT INTO `account_details` (`Fname`, `Lname`, `Cont_num`, `Username`, `Email`, `Password`) VALUES
 ('cley', 'domasian', 2147483647, 'cley', 'gtc.dredd.domasian@cvsu.edu.ph', 'dredd123'),
 ('Dredd', 'Domasian', 2147483647, 'domasiandredd@gmail.com', 'domasiandredd@gmail.com', 'dredd123'),
-('Franzen', 'Fabrero', 15123535, 'Franz', 'gesrgerge', '123'),
 ('lhay', 'ramos', 2147483647, 'lhay', 'lhay@gmail.com', 'lhay123');
 
 -- --------------------------------------------------------
@@ -69,7 +68,7 @@ CREATE TABLE `cart` (
 CREATE TABLE `orders_table` (
   `order_id` int(11) NOT NULL,
   `total_quantity` int(11) NOT NULL,
-  `grand_total` int(20) NOT NULL
+  `grand_total` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -77,7 +76,11 @@ CREATE TABLE `orders_table` (
 --
 
 INSERT INTO `orders_table` (`order_id`, `total_quantity`, `grand_total`) VALUES
-(1, 3, 247);
+(10, 3, 349.00),
+(11, 2, 292.00),
+(12, 1, 57.00),
+(13, 5, 1995.00),
+(14, 6, 774.00);
 
 -- --------------------------------------------------------
 
@@ -124,12 +127,13 @@ INSERT INTO `products` (`Item_id`, `price`, `name`, `image`) VALUES
 --
 
 CREATE TABLE `reservation_details` (
-  `Reservation_id` int(11) NOT NULL,
+  `Reservation_Id` int(11) NOT NULL,
   `Name` varchar(225) NOT NULL,
   `Email` varchar(225) NOT NULL,
   `Date` date NOT NULL,
   `Time` varchar(225) NOT NULL,
-  `Num_of_Guests` int(20) NOT NULL
+  `Num_of_Guests` int(11) NOT NULL,
+  `Celebration` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -143,32 +147,50 @@ ALTER TABLE `account_details`
   ADD PRIMARY KEY (`Username`);
 
 --
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `orders_table`
 --
 ALTER TABLE `orders_table`
   ADD PRIMARY KEY (`order_id`);
 
 --
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`Item_id`);
+
+--
 -- Indexes for table `reservation_details`
 --
 ALTER TABLE `reservation_details`
-  ADD PRIMARY KEY (`Reservation_id`);
+  ADD PRIMARY KEY (`Reservation_Id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+
+--
 -- AUTO_INCREMENT for table `orders_table`
 --
 ALTER TABLE `orders_table`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `reservation_details`
 --
 ALTER TABLE `reservation_details`
-  MODIFY `Reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20242;
+  MODIFY `Reservation_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
