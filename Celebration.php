@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <a href=""><img src="img/logo.png" style="width: 110px;"></a>
+        <a href="home.php"><img src="img/logo.png" style="width: 110px;"></a>
         <nav class="navbar">
         <a href="home.php" class="nav">HOME</a>
             <a href="menu.php" class="nav">MENU</a>
@@ -52,7 +52,8 @@
 
 
     <div class="container mt-5">
-        <a href="Reservation.php" class="btn1 btn-success btn-lg text-dark" role="button"> <strong style="font-size:33px"> Book Now!</strong> </a>
+        <a href="Reservation.php" class="btn1 btn-success btn-lg text-dark m-1" role="button"> <strong style="font-size:33px"> Book Now!</strong> </a>
+        <a href="Reservation_details.php" class="btn1 btn-primary btn-lg text-dark m-4 py-3" role="button"> <strong style="font-size:29px"> Reservations</strong> </a>
     </div>
     
 </body>
