@@ -1,5 +1,15 @@
 <?php
     include ("Modules/connect.php");
+    if(!empty($_SESSION["Username"])){
+        $user = $_SESSION["Username"];
+        $result = mysqli_query($con, "SELECT * FROM account_details WHERE Username = '$user'");
+        $row = mysqli_fetch_assoc($result);
+    } else{
+        header("Location: login.php");
+    }
+
+    $sql = mysqli_query($con, "SELECT COUNT(*) AS num FROM reservation_details");
+    $ids = mysqli_fetch_assoc($sql);
 ?>
 
 <!DOCTYPE html>
@@ -30,12 +40,14 @@
                         <div class="login-form">
                             <form action="" method="post">
                                 <div class="form-group">
+                                    <label>Reservation_Id</label>
+                                    <input type="text" class="form-control" value="<?php echo 2024 . $ids['num']?>" name="rid1" disabled>
+                                    <input type="text" class="form-control" value="<?php echo 2024 . $ids['num']?>" name="rid" hidden>
+                                </div>
+                                <div class="form-group">
                                     <label>Name</label>
                                     <input type="text" class="form-control" placeholder="" name="name" required>
                                 </div>
-                                <div class="form-group">
-                                    <label>Username</label>
-                                    <input type="text" class="form-control" placeholder="" name="username" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Email</label>
@@ -59,33 +71,34 @@
                                     <label>Number of Guests</label>
                                     <input type="number" class="form-control" placeholder="Maximum of 60 Guests" name="guests" required>
                                 </div>
-                                <button type="submit" class="btn btn-success text-dark btn-block my-3" name="createBtn">Submit</button>
+                                <button type="submit" class="btn btn-success text-dark btn-block my-3" name="reserved">Submit</button>
+                                <a href="Celebration.php" class="btn btn-outline-success btn-block text-dark" role="button">Back</a>
                             </form>
                             <?php
-                                if(isset($_REQUEST['createBtn'])){
+                                if(isset($_REQUEST['reserved'])){
+                                    $r_id = mysqli_real_escape_string($con, $_POST['rid']);
                                     $name = mysqli_real_escape_string($con, $_POST['name']);
-                                    $username = mysqli_real_escape_string($con, $_POST['username']);
                                     $email_add = mysqli_real_escape_string($con, $_POST['email']);
                                     $date = mysqli_real_escape_string($con, $_POST['date']);
                                     $time = mysqli_real_escape_string($con, $_POST['time']);
-                                    $No_of_Guests = mysqli_real_escape_string($con, $_POST['guests']);                  
+                                    $No_of_Guests = mysqli_real_escape_string($con, $_POST['guests']);
+
+                                    $insert = mysqli_query($con, "INSERT INTO reservation_details VALUE('$r_id', '$name', '$email_add', '$date', '$time', '$No_of_Guests')");
                                     
-                                    $checkUser  = mysqli_query($con, "SELECT * FROM account_details WHERE Username = '$username'");
-                                    if (mysqli_num_rows($checkUser ) > 0) {
-                                        $insert = mysqli_query($con, "INSERT INTO reservation_details (Name, Email, Date, Time, Num_of_Guests) VALUES ('$name', '$email_add', '$date', '$time', '$No_of_Guests')");
-                                        if ($insert) {
-                                        ?>
+                                    if($insert){ ?>
+                                            <script type="text/javascript">
+                                                alert("Reservation Booked!");
+                                                window.location = "Celebration.php";
+                                            </script>
+                                        <?php
+                                    }else{ ?>
                                         <script type="text/javascript">
-                                        alert("Reservation Booked!");
-                                        window.location = "Celebration.php";
-                                    </script>
-                                    <?php
-                                    } else {
-                                        echo "Error: " . mysqli_error($con); 
+                                            alert("Failed to reserve, Try again!");
+                                            window.alert = "Reservation.php";
+                                        </script>
+                                        <?php
                                     }
-                                    } else {
-                                    echo "Error: Username does not exist."; 
-                            }}
+                                }
                             ?>
                         </div>
                       </div>
