@@ -51,10 +51,10 @@ include ("Modules/connect.php");
                                 <div class="form-group">
                                     <label>Time</label>
                                     <select id="options" class="form-control" name="time" required>
-                                        <option value="" selected></option>
-                                        <option value="9am - 12-pm" selected>9am - 12-pm</option>
-                                        <option value="1pm - 4pm">1pm - 4pm</option>
-                                        <option value="5pm - 7pm">5pm - 7pm</option>
+                                        <option value="9am - 11-am" selected>9am - 11-am</option>
+                                        <option value="1pm - 3pm">1pm - 3pm</option>
+                                        <option value="4pm - 6pm">4pm - 6pm</option>
+                                        <option value="7pm - 9pm">7pm - 9pm</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
