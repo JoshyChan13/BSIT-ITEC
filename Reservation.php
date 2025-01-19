@@ -48,7 +48,8 @@
                                 <div class="form-group">
                                     <label>Time</label>
                                     <select id="options" class="form-control" name="time" required>
-                                        <option value="9am - 11-am" selected>9am - 11-am</option>
+                                        <option value="" selected></option>
+                                        <option value="9am - 11-am">9am - 11-am</option>
                                         <option value="1pm - 3pm">1pm - 3pm</option>
                                         <option value="4pm - 6pm">4pm - 6pm</option>
                                         <option value="7pm - 9pm">7pm - 9pm</option>
@@ -57,10 +58,6 @@
                                 <div class="form-group">
                                     <label>Number of Guests</label>
                                     <input type="number" class="form-control" placeholder="Maximum of 60 Guests" name="guests" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Celebration</label>
-                                    <input type="text" class="form-control" placeholder="Birthday" name="event" required>
                                 </div>
                                 <button type="submit" class="btn btn-success text-dark btn-block my-3" name="createBtn">Submit</button>
                             </form>
@@ -71,12 +68,11 @@
                                     $email_add = mysqli_real_escape_string($con, $_POST['email']);
                                     $date = mysqli_real_escape_string($con, $_POST['date']);
                                     $time = mysqli_real_escape_string($con, $_POST['time']);
-                                    $No_of_Guests = mysqli_real_escape_string($con, $_POST['guests']);
-                                    $Event = mysqli_real_escape_string($con, $_POST['event']);                     
+                                    $No_of_Guests = mysqli_real_escape_string($con, $_POST['guests']);                  
                                     
                                     $checkUser  = mysqli_query($con, "SELECT * FROM account_details WHERE Username = '$username'");
                                     if (mysqli_num_rows($checkUser ) > 0) {
-                                        $insert = mysqli_query($con, "INSERT INTO reservation_details (Username, Name, Email, Date, Time, Num_of_Guests, Celebration) VALUES ('$username', '$name', '$email_add', '$date', '$time', '$No_of_Guests', '$Event')");
+                                        $insert = mysqli_query($con, "INSERT INTO reservation_details (Name, Email, Date, Time, Num_of_Guests) VALUES ('$name', '$email_add', '$date', '$time', '$No_of_Guests')");
                                         if ($insert) {
                                         ?>
                                         <script type="text/javascript">

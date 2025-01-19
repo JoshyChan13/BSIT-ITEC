@@ -28,7 +28,6 @@
                     <th class="text-dark">Date</th>
                     <th class="text-dark">Time</th>
                     <th class="text-dark">No. of Guests</th>
-                    <th class="text-dark">Celebration</th>
                     <th class="text-dark">Action</th>
                 </tr>
             </thead>
@@ -44,7 +43,6 @@
                     <th><?php echo $list['Date']?> </th>
                     <th><?php echo $list['Time']?> </th>
                     <th><?php echo $list['Num_of_Guests']?> </th>
-                    <th><?php echo $list['Celebration']?> </th>
                     <th> <a href="Reservation_update.php"><img src="img/Update.png" width="30" height="30" border="0"> </a>
                         <a href="Reservation_delete.php"><img src="img/Delete.png" width="30" height="30" border="0"> </a> </th>
                 </tr>
