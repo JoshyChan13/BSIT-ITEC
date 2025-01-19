@@ -52,7 +52,7 @@ include ("Modules/connect.php");
                                     <label>Time</label>
                                     <select id="options" class="form-control" name="time" required>
                                         <option value="" selected></option>
-                                        <option value="9am - 12-pm">9am - 12-pm</option>
+                                        <option value="9am - 12-pm" selected>9am - 12-pm</option>
                                         <option value="1pm - 4pm">1pm - 4pm</option>
                                         <option value="5pm - 7pm">5pm - 7pm</option>
                                     </select>

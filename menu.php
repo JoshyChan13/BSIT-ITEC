@@ -23,11 +23,11 @@
     <header>
         <a href=""><img src="img/logo.png" style="width: 110px;"></a>
         <nav class="navbar">
-        <a href="home.php" class="nav">HOME</a>
+            <a href="home.php" class="nav">HOME</a>
             <a href="menu.php" class="nav">MENU</a>
             <a href="Celebration.php" class="nav">RESERVATION</a>
-            <a href="Contact.php" class="nav">CONTACT</a>
             <a href="view_cart.php" class="nav">CART</a>
+            <a href="Contact.php" class="nav">CONTACT</a>
             <a href="logout.php" class="login" onclick="logout()">LOGOUT</a>
         </nav>
     </header>
