@@ -19,7 +19,8 @@ $result = $con->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="home.css">
     <title>Your Cart</title>
@@ -96,6 +97,9 @@ $result = $con->query($sql);
         
             echo '<div class="total-price text-right">
                     <h3>Total: <span id="total-price">₱' . number_format($grand_total, 2) . '</span></h3>
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-primary" onclick="placeOrder()">Place Order</button>
                 </div>';
         } else {
             echo "<p>Your cart is empty.</p>";
@@ -183,6 +187,56 @@ $result = $con->query($sql);
             })
             .catch(error => console.error('Error:', error));
         }
+        function placeOrder() {
+            fetch('place_order.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({}) 
+            })
+            .then((response) => response.json()) 
+            .then((result) => {
+                if (result.success) {
+                    alert('Order Successful!');
+                    clearCartOnPage(); 
+                } else {
+                    alert('Error: ' + result.message); 
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('An unexpected error occurred. Please try again.');
+            });
+        }
+
+
+
+        function clearCartOnPage() {
+            const cartContainer = document.querySelector('.container');
+            const cartTable = document.querySelector('.table');
+            const cartMessage = document.querySelector('.total-price');
+            
+ 
+            if (cartTable) {
+                cartTable.innerHTML = ''; 
+            }
+
+            if (cartMessage) {
+                cartMessage.innerHTML = ''; 
+            }
+
+
+            const emptyMessage = document.createElement('p');
+            emptyMessage.textContent = "Your cart is now empty.";
+            cartContainer.appendChild(emptyMessage);
+        }
+
+
+
+
+
+
 
     </script>
 </body>
