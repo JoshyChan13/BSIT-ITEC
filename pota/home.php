@@ -1,14 +1,30 @@
 <?php
 include ("Modules/connect.php");
-include ("Modules/header.php");
-    if(!empty($_SESSION["Username"])){
-        $user = $_SESSION["Username"];
-        $result = mysqli_query($con, "SELECT * FROM account_details WHERE Username = '$user'");
-        $row = mysqli_fetch_assoc($result);
-    } else{
-        header("Location: login.php");
-    }
+
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script text="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="home.css">
+    <title>Mang Inasal v2.0</title>
+</head>
+<body>
+<header>
+        <img src="img/logo.png" style="width: 110px;">
+        <nav class="navbar">
+            <a href="home.php" class="nav">HOME</a>
+            <a href="menu.php" class="nav">MENU</a>
+            <a href="Celebration.php" class="nav">RESERVATION</a>
+            <a href="view_cart.php" class="nav">CART</a>
+            <a href="Contact.php" class="nav">CONTACT</a>
+            <a href="logout.php" class="login" onclick="logout()">LOGOUT</a>
+        </nav>
+    </header>
 
 <section class="home" id="home">
     <div class="content">
@@ -16,11 +32,11 @@ include ("Modules/header.php");
         <p>Laging hinahanap-hanap ni Angel ang <br>
         walang kapantay sa 2-in-1 sa laki at <br>
         #NuotSaSarap na Mang Inasal Chicken!</p>
-        <a href="menu.php" class="btn" id="ordernow">Order Now!</a>
+        <a href="menu.php" class="btn">Order Now!</a>
     </div>
 
     <div class="image ">
-        <img class="ima" src="img/manok.jpg" alt="">
+        <img src="img/manok.jpg" alt="">
     </div>
     
     <div class="container bg-light p-3">
@@ -55,8 +71,12 @@ include ("Modules/header.php");
                 </div>
             </div>
     </div>
-    
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h4>All Rights Reserved. Mang Inasal Philippines, Inc. 2023</h4>
+        </div>
     </div>
 </section>
 
-<?php include 'Modules/footer.php'; ?>
+</body>
+</html>

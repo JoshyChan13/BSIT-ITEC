@@ -1,5 +1,6 @@
 <?php 
     include ("Modules/connect.php");
+    include ("Modules/header.php");
     if(empty($_SESSION["Username"])){
         header("Location: login.php");
     }
@@ -9,28 +10,7 @@
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script text="text/javascript" src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="home.css">
-    <title>Mang Inasal v2.0</title>
-</head>
-<body>
-    <header>
-        <a href=""><img src="img/logo.png" style="width: 110px;"></a>
-        <nav class="navbar">
-            <a href="home.php" class="nav">HOME</a>
-            <a href="menu.php" class="nav">MENU</a>
-            <a href="Celebration.php" class="nav">RESERVATION</a>
-            <a href="view_cart.php" class="nav">CART</a>
-            <a href="Contact.php" class="nav">CONTACT</a>
-            <a href="logout.php" class="login" onclick="logout()">LOGOUT</a>
-        </nav>
-    </header>
+
 <BR><BR><BR><BR><BR><BR><BR>
 <section class="menu" id="menu">
         <h1 class="heading text-center" style="font-size: 45px;"><strong>Our <span class="text-success">MENU</span></strong> </h1>
@@ -62,9 +42,6 @@
                 name: name,
                 price: price,
             };
-
-
-
             fetch('add_to_cart.php', {
                 method: 'POST',
                 headers: {
@@ -82,8 +59,7 @@
             })
             .catch(error => console.error('Fetch error:', error));
         }
+    </script>
+<BR><BR><BR><BR><BR><BR><BR>
 
-
-</script>
-</body>
-</html>
+<?php include 'Modules/footer.php'; ?>

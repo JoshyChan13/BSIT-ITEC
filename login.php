@@ -76,11 +76,4 @@
         </div>
     </div>
      <br><br><br><br><br><br><br><br><br><br>
-    <footer class="bg-light text-center text-lg-start">
-    </div>
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-        <h4>All Rights Reserved. Mang Inasal Philippines, Inc. 2023</h4>
-    </div>
-    </footer>
-</body>
-</html>
+<?php include 'Modules/footer.php'; ?>

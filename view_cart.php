@@ -1,6 +1,6 @@
 <?php
-session_start();
 include("Modules/connect.php");
+include("Modules/header.php");
 
 if(empty($_SESSION["Username"])) {
     header("Location: login.php");
@@ -13,17 +13,6 @@ $sql = "SELECT c.id, c.item_id, c.quantity, p.name, p.price, p.image
         WHERE c.id IS NOT NULL";
 $result = $con->query($sql);
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="home.css">
-    <title>Your Cart</title>
     <style>
         table th {
             background-color: #f8f9fa;
@@ -38,19 +27,6 @@ $result = $con->query($sql);
             margin-top: 10%;
         }
     </style>
-</head>
-<body>
-    <header>
-        <a href=""><img src="img/logo.png" style="width: 110px;"></a>
-        <nav class="navbar">
-        <a href="home.php" class="nav">HOME</a>
-            <a href="menu.php" class="nav">MENU</a>
-            <a href="Celebration.php" class="nav">RESERVATION</a>
-            <a href="view_cart.php" class="nav">CART</a>
-            <a href="Contact.php" class="nav">CONTACT</a>
-            <a href="logout.php" class="login" onclick="logout()">LOGOUT</a>
-        </nav>
-    </header>
     
     <div class="container">
         <h1 class="text-center">Your Cart</h1>
@@ -239,5 +215,5 @@ $result = $con->query($sql);
 
 
     </script>
-</body>
-</html>
+    <br><br>
+<?php include 'Modules/footer.php'; ?>

@@ -1,20 +1,8 @@
 <?php
     include ("Modules/connect.php");
+    include("Modules/header.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script text="text/javascript" src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>Reservation Details</title>
-</head>
-<body>
-    <div class="container-fluid bg-success text-white">
-        <h5><a href="home.php"><img class="p-3" style="width: 5%;" src="img/logo.png"></a>Mang Inasal Philippines Inc.</h5>
-    </div>
     <div class = "container p-2 text-center">
         <h4>Reservation Details</h4>
     </div>
