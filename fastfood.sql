@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2025 at 04:20 PM
+-- Generation Time: Jan 19, 2025 at 10:42 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -58,6 +58,29 @@ CREATE TABLE `cart` (
   `price` decimal(10,2) NOT NULL,
   `quantity` int(11) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders_table`
+--
+
+CREATE TABLE `orders_table` (
+  `order_id` int(11) NOT NULL,
+  `total_quantity` int(11) NOT NULL,
+  `grand_total` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `orders_table`
+--
+
+INSERT INTO `orders_table` (`order_id`, `total_quantity`, `grand_total`) VALUES
+(10, 3, 349.00),
+(11, 2, 292.00),
+(12, 1, 57.00),
+(13, 5, 1995.00),
+(14, 6, 774.00);
 
 -- --------------------------------------------------------
 
@@ -130,6 +153,12 @@ ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `orders_table`
+--
+ALTER TABLE `orders_table`
+  ADD PRIMARY KEY (`order_id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -149,7 +178,13 @@ ALTER TABLE `reservation_details`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+
+--
+-- AUTO_INCREMENT for table `orders_table`
+--
+ALTER TABLE `orders_table`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `reservation_details`
