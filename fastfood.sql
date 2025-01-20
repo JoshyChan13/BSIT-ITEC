@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 19, 2025 at 02:19 PM
+-- Generation Time: Jan 20, 2025 at 06:18 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -36,16 +36,6 @@ CREATE TABLE `account_details` (
   `Password` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `account_details`
---
-
-INSERT INTO `account_details` (`Fname`, `Lname`, `Cont_num`, `Username`, `Email`, `Password`) VALUES
-('cley', 'domasian', 2147483647, 'cley', 'gtc.dredd.domasian@cvsu.edu.ph', 'dredd123'),
-('Dredd', 'Domasian', 2147483647, 'domasiandredd@gmail.com', 'domasiandredd@gmail.com', 'dredd123'),
-('Franzen', 'Fabrero', 15123535, 'Franz', 'gesrgerge', '123'),
-('lhay', 'ramos', 2147483647, 'lhay', 'lhay@gmail.com', 'lhay123');
-
 -- --------------------------------------------------------
 
 --
@@ -57,7 +47,8 @@ CREATE TABLE `cart` (
   `item_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `price` decimal(10,2) NOT NULL,
-  `quantity` int(11) DEFAULT 1
+  `quantity` int(11) DEFAULT 1,
+  `username` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -69,15 +60,9 @@ CREATE TABLE `cart` (
 CREATE TABLE `orders_table` (
   `order_id` int(11) NOT NULL,
   `total_quantity` int(11) NOT NULL,
-  `grand_total` int(20) NOT NULL
+  `grand_total` int(20) NOT NULL,
+  `username` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `orders_table`
---
-
-INSERT INTO `orders_table` (`order_id`, `total_quantity`, `grand_total`) VALUES
-(1, 3, 247);
 
 -- --------------------------------------------------------
 
@@ -143,6 +128,12 @@ ALTER TABLE `account_details`
   ADD PRIMARY KEY (`Username`);
 
 --
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `orders_table`
 --
 ALTER TABLE `orders_table`
@@ -159,10 +150,16 @@ ALTER TABLE `reservation_details`
 --
 
 --
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+
+--
 -- AUTO_INCREMENT for table `orders_table`
 --
 ALTER TABLE `orders_table`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `reservation_details`
