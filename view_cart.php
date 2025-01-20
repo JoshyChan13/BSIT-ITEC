@@ -70,10 +70,10 @@ $result = $stmt->get_result();
                                 </td>
                             </tr>';
                     }
-
+                
                     echo '</tbody>
                     </table>';
-
+                
                     echo '<div class="total-price text-right">
                             <h3>Total: <span id="total-price">₱' . number_format($grand_total, 2) . '</span></h3>
                         </div>
@@ -172,7 +172,8 @@ $result = $stmt->get_result();
             .then((result) => {
                 if (result.success) {
                     alert('Order Successful!');
-                    clearCartOnPage(); 
+                    clearCartOnPage();
+                    hidePlaceOrderButton();
                 } else {
                     alert('Error: ' + result.message); 
                 }
@@ -183,10 +184,18 @@ $result = $stmt->get_result();
             });
         }
 
+        function hidePlaceOrderButton() {
+            const placeOrderButton = document.querySelector('.btn.btn-primary');
+            if (placeOrderButton) {
+                placeOrderButton.style.display = 'none';
+            }
+        }
+
         function clearCartOnPage() {
             const cartContainer = document.querySelector('.container');
             const cartTable = document.querySelector('.table');
             const cartMessage = document.querySelector('.total-price');
+            const placeOrderButton = document.querySelector('.btn.btn-primary');
             
             if (cartTable) {
                 cartTable.innerHTML = ''; 
@@ -196,10 +205,16 @@ $result = $stmt->get_result();
                 cartMessage.innerHTML = ''; 
             }
 
+            if (placeOrderButton) {
+                placeOrderButton.style.display = 'none';
+            }
+
             const emptyMessage = document.createElement('p');
             emptyMessage.textContent = "Your cart is now empty.";
+            emptyMessage.className = 'text-center text-muted';
             cartContainer.appendChild(emptyMessage);
         }
+
     </script>
     <br><br>
 <?php include 'Modules/footer.php'; ?>

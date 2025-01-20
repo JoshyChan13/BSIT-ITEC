@@ -35,7 +35,7 @@ if ($result->num_rows > 0) {
     $stmt->bind_param("is", $item_id, $username);
 
     if ($stmt->execute()) {
-        echo json_encode(['success' => true, 'message' => 'Product quantity updated.']);
+        
     } else {
         echo json_encode(['success' => false, 'message' => 'Failed to update quantity.', 'error' => $stmt->error]);
     }
@@ -45,7 +45,7 @@ if ($result->num_rows > 0) {
     $stmt->bind_param("isis", $item_id, $name, $price, $username); 
 
     if ($stmt->execute()) {
-        echo json_encode(['success' => true, 'message' => 'Product added to cart.']);
+        
     } else {
         echo json_encode(['success' => false, 'message' => 'Failed to add product to cart.', 'error' => $stmt->error]);
     }
