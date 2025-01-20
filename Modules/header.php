@@ -1,12 +1,3 @@
-<?php
-if(!empty($_SESSION["Username"])){
-  $user = $_SESSION["Username"];
-  $result = mysqli_query($con, "SELECT * FROM account_details WHERE Username = '$user'");
-  $row = mysqli_fetch_assoc($result);
-} else{
-  header("Location: login.php");
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

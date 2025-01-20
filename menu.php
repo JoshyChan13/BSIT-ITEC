@@ -1,6 +1,13 @@
 <?php 
+    session_start();
+    if (!isset($_SESSION['Username'])) {
+        echo '<script type="text/javascript">window.location.href = "login.php";</script>';
+        exit();
+    }
+    
     include ("Modules/connect.php");
     include ("Modules/header.php");
+
     $sql = "SELECT * FROM products";
     $result = $con->query($sql);
 ?>

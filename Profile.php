@@ -1,8 +1,15 @@
 <?php 
+session_start();
+if (!isset($_SESSION['Username'])) {
+    echo '<script type="text/javascript">window.location.href = "login.php";</script>';
+    exit();
+}
 include ("Modules/connect.php");
 include ('Modules/header.php'); 
-    $sql = mysqli_query($con, "SELECT * FROM account_details WHERE Username = '$user'");
-    $rec = mysqli_fetch_assoc($sql);
+
+$user = $_SESSION['Username'];
+$sql = mysqli_query($con, "SELECT * FROM account_details WHERE Username = '$user'");
+$rec = mysqli_fetch_assoc($sql);
 ?>
 
 <div class="form-container">
@@ -11,21 +18,21 @@ include ('Modules/header.php');
     <div class="row g-3 mb-3">
       <div class="col-md-6">
         <label for="username" class="form-label">Username:</label>
-        <input type="text" class="form-control" name="username" placeholder="" required>
+        <input type="text" class="form-control" name="username" value="<?php echo $rec['Username']; ?>" required>
       </div>
       <div class="col-md-6">
         <label for="email" class="form-label">Email:</label>
-        <input type="email" class="form-control" name="email" placeholder="" required>
+        <input type="email" class="form-control" name="email" value="<?php echo $rec['Email']; ?>" required>
       </div>
     </div>
     <div class="row g-3 mb-3">
       <div class="col-md-6">
         <label for="firstname" class="form-label">Firstname:</label>
-        <input type="text" class="form-control" name="firstname" placeholder="" required>
+        <input type="text" class="form-control" name="firstname" value="<?php echo $rec['Fname']; ?>" required>
       </div>
       <div class="col-md-6">
         <label for="lastname" class="form-label">Lastname:</label>
-        <input type="text" class="form-control" name="lastname" placeholder="" required>
+        <input type="text" class="form-control" name="lastname" value="<?php echo $rec['Lname']; ?>" required>
       </div>
     </div>
     <div class="row g-3 mb-3">
@@ -40,17 +47,13 @@ include ('Modules/header.php');
     </div>
     <div class="d-flex justify-content-between align-items-center mt-3">
       <button type="submit" class="btn-update" name="profile_edit">Confirm Update</button>
-      <button 
-        type="button" 
-        class="btn-back" 
-        onclick="location.href='logout.php';">
-        Log Out
-      </button>
+      <button type="button" class="btn-back" onclick="location.href='logout.php';">Log Out</button>
     </div>
   </form>
 </div>
+
 <?php
-  if (isset($_POST['profile_edit'])) {
+if (isset($_POST['profile_edit'])) {
     $user = isset($_POST['username']) ? mysqli_real_escape_string($con, $_POST['username']) : '';
     $email = isset($_POST['email']) ? mysqli_real_escape_string($con, $_POST['email']) : '';
     $firstname = isset($_POST['firstname']) ? mysqli_real_escape_string($con, $_POST['firstname']) : '';
@@ -60,26 +63,18 @@ include ('Modules/header.php');
 
     $sql = mysqli_query($con, "SELECT * FROM account_details WHERE Username = '$user'");
     if (mysqli_num_rows($sql) == 0) {
-        echo '<script type="text/javascript">
-                alert("Username does not exist!");
-              </script>';
+        echo '<script type="text/javascript">alert("Username does not exist!");</script>';
     } else {
         $rec = mysqli_fetch_assoc($sql);
         if ($old_password != $rec['Password']) {
-            echo '<script type="text/javascript">
-                    alert("Old Password is incorrect!");
-                  </script>';
+            echo '<script type="text/javascript">alert("Old Password is incorrect!");</script>';
         } else {
             $update = mysqli_query($con, "UPDATE account_details SET Email = '$email', Fname = '$firstname', Lname='$lastname', Password='$new_password' WHERE Username='$user'");
             if ($update) { ?>
-                <script type="text/javascript">
-                    alert("Updated Successfully!");
-                </script>
+                <script type="text/javascript">alert("Updated Successfully!");</script>
             <?php
             } else { ?>
-                <script type="text/javascript">
-                    alert("Failed to update, Try again!");
-                </script>
+                <script type="text/javascript">alert("Failed to update, Try again!");</script>
             <?php
             }
         }

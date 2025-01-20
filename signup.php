@@ -1,7 +1,9 @@
 <?php
     include("Modules/connect.php");
-    if(!empty($_SESSION["Username"])){
+    session_start();
+    if (isset($_SESSION['Username'])) {
         header("Location: home.php");
+        exit();
     }
 ?>
 
@@ -12,12 +14,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script text="text/javascript" src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="homer.css">
     <title>Signup</title>
 </head>
 <body class="bg-white">
-    <div class="container-fluid bg-success text-white">
+    <footer>
+    <div>
         <h5><a href="home.php"><img class="p-3" style="width: 5%;" src="img/logo.png"></a>Mang Inasal Philippines Inc.</h5>
     </div>
+    </footer>
 
     <div class="container my-5">
         <div class="row d-flex justify-content-center">
@@ -114,11 +119,4 @@
             </div>
         </div>
     </div>
-    <footer class="bg-light text-center text-lg-start">
-   
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-        <h4>All Rights Reserved. Mang Inasal Philippines, Inc. 2023</h4>
-    </div>
-    </footer>
-</body>
-</html>
+    <?php include("Modules/footer.php"); ?>

@@ -1,28 +1,17 @@
 <?php
     include ("Modules/connect.php");
-    if(!empty($_SESSION["Username"])){
-        $user = $_SESSION["Username"];
-        $result = mysqli_query($con, "SELECT * FROM account_details WHERE Username = '$user'");
-        $row = mysqli_fetch_assoc($result);
-    } else{
-        header("Location: login.php");
+    include ('Modules/header.php'); 
+
+    session_start();
+    if (!isset($_SESSION['Username'])) {
+        echo '<script type="text/javascript">window.location.href = "login.php";</script>';
+        exit();
     }
 
     $sql = mysqli_query($con, "SELECT COUNT(*) AS num FROM reservation_details");
     $ids = mysqli_fetch_assoc($sql);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script text="text/javascript" src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="home.css">
-    <title>Reservation</title>
-</head>
-<body>
 <div class="container-fluid bg-success text-white">
         <h5><a href="home.php"><img class="p-3" style="width: 5%;" src="img/logo.png"></a>Mang Inasal Philippines Inc.</h5>
     </div>
@@ -106,11 +95,4 @@
             </div>
         </div>
     </div>
-    <footer class="bg-light text-center text-lg-start">
-   
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-        <h4>All Rights Reserved. Mang Inasal Philippines, Inc. 2023</h4>
-    </div>
-    </footer>
-</body>
-</html>
+    <?php include 'Modules/footer.php'; ?>
