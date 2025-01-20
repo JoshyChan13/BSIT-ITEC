@@ -1,20 +1,18 @@
 <?php
-    include ("Modules/connect.php");
-    include ('Modules/header.php'); 
-
     session_start();
     if (!isset($_SESSION['Username'])) {
         echo '<script type="text/javascript">window.location.href = "login.php";</script>';
         exit();
     }
+    include ("Modules/connect.php");
+    include ('Modules/header.php'); 
 
     $sql = mysqli_query($con, "SELECT COUNT(*) AS num FROM reservation_details");
     $ids = mysqli_fetch_assoc($sql);
+    $user = $_SESSION['Username'];
+    $sql = mysqli_query($con, "SELECT * FROM account_details WHERE Username = '$user'");
+    $rec = mysqli_fetch_assoc($sql);
 ?>
-
-<div class="container-fluid bg-success text-white">
-        <h5><a href="home.php"><img class="p-3" style="width: 5%;" src="img/logo.png"></a>Mang Inasal Philippines Inc.</h5>
-    </div>
 
     <div class="container my-5">
         <div class="row d-flex justify-content-center">
@@ -35,12 +33,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input type="text" class="form-control" placeholder="" name="name" required>
+                                    <input type="text" class="form-control" value="<?php echo $rec['Username']; ?>" placeholder="" name="name" required>
                                 </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="text" class="form-control" placeholder="" name="email" required>
+                                    <input type="text" class="form-control" value="<?php echo $rec['Email']; ?>" placeholder="" name="email" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Date</label>

@@ -6,5 +6,5 @@
 
 <script type="text/javascript">
     alert("Your reservation has been deleted!");
-    window.location = "Reservation_details.php";
+    window.location = "Reservation.php";
 </script>
