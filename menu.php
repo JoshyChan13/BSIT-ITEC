@@ -1,13 +1,8 @@
 <?php 
     include ("Modules/connect.php");
     include ("Modules/header.php");
-    if(empty($_SESSION["Username"])){
-        header("Location: login.php");
-    }
     $sql = "SELECT * FROM products";
     $result = $con->query($sql);
-
-
 ?>
 
 

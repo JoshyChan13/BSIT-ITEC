@@ -1,16 +1,9 @@
 <?php
 include ("Modules/connect.php");
 include ("Modules/header.php");
-    if(!empty($_SESSION["Username"])){
-        $user = $_SESSION["Username"];
-        $result = mysqli_query($con, "SELECT * FROM account_details WHERE Username = '$user'");
-        $row = mysqli_fetch_assoc($result);
-    } else{
-        header("Location: login.php");
-    }
 ?>
 
-<section class="home" id="home">
+
     <div class="content">
         <h3>MANG INASAL</h3>
         <p>Laging hinahanap-hanap ni Angel ang <br>
@@ -56,7 +49,7 @@ include ("Modules/header.php");
             </div>
     </div>
     
-    </div>
-</section>
+
+
 
 <?php include 'Modules/footer.php'; ?>

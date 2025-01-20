@@ -1,13 +1,6 @@
 <?php
 include ("Modules/connect.php");
 include ("Modules/header.php");
-    if(!empty($_SESSION["Username"])){
-        $user = $_SESSION["Username"];
-        $result = mysqli_query($con, "SELECT * FROM account_details WHERE Username = '$user'");
-        $row = mysqli_fetch_assoc($result);
-    } else{
-        header("Location: login.php");
-    }
 ?>
     <br><br><br><br><br><br><br>
     <p class="text-success text-center" style="font-size: 50px;"><i> Book &nbsp&nbsp <span style="font-size: 35px;">your</span> <strong> &nbsp&nbsp Celebration!</strong</i></p>

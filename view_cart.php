@@ -2,11 +2,6 @@
 include("Modules/connect.php");
 include("Modules/header.php");
 
-if(empty($_SESSION["Username"])) {
-    header("Location: login.php");
-    exit;
-}
-
 $sql = "SELECT c.id, c.item_id, c.quantity, p.name, p.price, p.image 
         FROM cart c 
         JOIN products p ON c.item_id = p.Item_id 

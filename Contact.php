@@ -1,13 +1,6 @@
 <?php
 include ("Modules/connect.php");
 include("Modules/header.php");
-    if(!empty($_SESSION["Username"])){
-        $user = $_SESSION["Username"];
-        $result = mysqli_query($con, "SELECT * FROM account_details WHERE Username = '$user'");
-        $row = mysqli_fetch_assoc($result);
-    } else{
-        header("Location: login.php");
-    }
 ?>
 
 <div class="container my-5">
@@ -36,8 +29,7 @@ include("Modules/header.php");
           <h5><strong>Instagram:</strong> 
           <a href="https://www.instagram.com/iammanginasal" target="_blank">https://www.instagram.com/iammanginasal</a></h5>
           <h5><strong>Tiktok:</strong>
-          <a href="https://www.tiktok.com/@manginasalph"
-          target="_blank">https://www.tiktok.com/@manginasalph</h5>
+          <a href="https://www.tiktok.com/@manginasalph" target="_blank">https://www.tiktok.com/@manginasalph</h5></a>
       </div>
   </div>
 
