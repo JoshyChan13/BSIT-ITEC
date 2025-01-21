@@ -8,8 +8,10 @@ if (!isset($_SESSION['Username'])) {
 include ("Modules/connect.php");
 include ("Modules/header.php");
 ?>
-    <br><br><br><br><br><br><br>
-    <p class="text-success text-center" style="font-size: 50px;"><i> Book &nbsp&nbsp <span style="font-size: 35px;">your</span> <strong> &nbsp&nbsp Celebration!</strong</i></p>
+    <link rel="stylesheet" href="Celebration.css">
+    <div class="text-center"><br>
+    <p class="text-success text-center" style="font-size: 50px;"><i> Book &nbsp&nbsp <span style="font-size: 35px;">your</span> <strong> &nbsp&nbsp Celebration!</strong></i></p>
+</div>
    
     <div class="container">
         <div class="text">
@@ -39,8 +41,8 @@ include ("Modules/header.php");
 
 
     <div class="container mt-5">
-        <a href="Reservation.php" class="btn1 btn-success btn-lg text-dark m-1" role="button"> <strong style="font-size:33px"> Book Now!</strong> </a>
-        <a href="Reservation_details.php" class="btn1 btn-primary btn-lg text-dark m-4 py-3" role="button"> <strong style="font-size:29px"> Reservations</strong> </a>
+        <a href="Reservation.php" class="btn1 btn-success btn-lg text-dark m-1" role="button"> <strong style="font-size:32px"> Book Now!</strong> </a>
+        <a href="Reservation_details.php" class="btn1 btn-primary btn-lg text-dark m-4 py-3" role="button"> <strong style="font-size:29px">Reservations</strong> </a>
     </div>
     <br>
     <?php include 'Modules/footer.php'; ?>

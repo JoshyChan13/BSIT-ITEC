@@ -16,7 +16,7 @@ include ("Modules/header.php");
     #NuotSaSarap na Mang Inasal Chicken!</p>
     <a href="menu.php" class="btn" id="ordernow">Order Now!</a>
 </div>
-<div class="container bg-light p-3">
+<div class="menu bg-light p-3">
     <h2 class="p-2">BEST SELLERS</h2>
     <div class="row">
         <div class="p-4 my-2">
