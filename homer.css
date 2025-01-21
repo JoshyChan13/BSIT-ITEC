@@ -20,7 +20,7 @@ header, footer{
 }
 footer {
 text-align: center;
-font-size: 22px;
+font-size: 20px;
 padding: 10px 0;
 margin-top: auto;
 }
@@ -29,6 +29,9 @@ header {
   align-items: center;
   justify-content: space-around;
   padding: 20px 0;
+}
+.hcontent{
+  text-align: center;
 }
 nav ul li{
   list-style: none;
