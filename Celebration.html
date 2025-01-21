@@ -1,0 +1,63 @@
+<?php
+session_start();
+if (!isset($_SESSION['Username'])) {
+    echo '<script type="text/javascript">window.location.href = "login.php";</script>';
+    exit();
+}
+
+include ("Modules/connect.php");
+include ("Modules/header.php");
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script text="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Celebration Page</title>
+    <link rel="stylesheet" href="Celebration.css">
+</head>
+<body>
+    <div class="text-center"><br><br><br><br><br><br><br>
+    <p class="text-success text-center" style="font-size: 50px;"><i> Book &nbsp&nbsp <span style="font-size: 35px;">your</span> <strong> &nbsp&nbsp Celebration!</strong></i></p>
+</div>
+   
+    <div class="container">
+        <div class="text">
+            <i style="font-size: 40px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Have a Special Occasion?!</i>
+            <p style="font-size: medium;">
+                Ready for a Surprise?!
+                The hottest take in celebrating a special day is coming to town, Readily served by your beloved Mang Inasal Fast Food Chain
+            </p>
+        </div>
+        <div class="image">
+            <img src="img/Celebrate.jpg" alt="Celebration">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image1">
+            <img src="img/logo.png" alt="Description of the image">
+        </div>
+        <div class="text1">
+            <i style="font-size: 40px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Did you see it Coming!!</i>
+            <p style="font-size: medium;">
+              One of your favorite fast food chains in the philippines is now offering the one of the hottest 
+              and gri-lliest Special Celebrations in the phillipines, Introducing the <span style="text-decoration: underline;"> Mang-Party Celebration </span>
+            </p>
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+        <a href="Reservation.php" class="btn1 btn-success btn-lg text-dark m-1" role="button"> <strong style="font-size:32px"> Book Now!</strong> </a>
+        <a href="Reservation_details.php" class="btn1 btn-primary btn-lg text-dark m-4 py-3" role="button"> <strong style="font-size:29px">Reservations</strong> </a>
+    </div>
+    <br>
+    <?php include 'Modules/footer.php'; ?>
+
+
+</body>
+</html>
+    
